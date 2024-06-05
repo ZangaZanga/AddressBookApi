@@ -1,0 +1,1106 @@
+2024-06-04 14:09:04.791 +02:00 [INF] User profile is available. Using '/Users/hamzakahna/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-06-04 14:09:05.028 +02:00 [INF] Now listening on: http://localhost:5254
+2024-06-04 14:09:05.049 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 14:09:05.050 +02:00 [INF] Hosting environment: Development
+2024-06-04 14:09:05.051 +02:00 [INF] Content root path: /Users/hamzakahna/Library/CloudStorage/OneDrive-Personal/CODING/C#_Projects/AddressBookApi/AddressBookApi
+2024-06-04 14:09:12.734 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/people - null null
+2024-06-04 14:09:12.806 +02:00 [INF] HTTP GET /people responded 404 in 26.0721 ms
+2024-06-04 14:09:12.810 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/people - 404 0 null 76.665ms
+2024-06-04 14:09:12.814 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5254/people, Response status code: 404
+2024-06-04 14:09:14.525 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/people - null null
+2024-06-04 14:09:14.526 +02:00 [INF] HTTP GET /people responded 404 in 0.9144 ms
+2024-06-04 14:09:14.527 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/people - 404 0 null 1.8191ms
+2024-06-04 14:09:14.527 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5254/people, Response status code: 404
+2024-06-04 14:09:15.208 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/people - null null
+2024-06-04 14:09:15.210 +02:00 [INF] HTTP GET /people responded 404 in 1.7342 ms
+2024-06-04 14:09:15.210 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/people - 404 0 null 2.5428ms
+2024-06-04 14:09:15.211 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5254/people, Response status code: 404
+2024-06-04 14:09:21.257 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/ - null null
+2024-06-04 14:09:21.259 +02:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-06-04 14:09:21.260 +02:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-06-04 14:09:21.260 +02:00 [INF] HTTP GET / responded 200 in 2.0241 ms
+2024-06-04 14:09:21.261 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/ - 200 null text/plain; charset=utf-8 3.2133ms
+2024-06-04 14:09:34.627 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/p - null null
+2024-06-04 14:09:34.628 +02:00 [INF] HTTP GET /p responded 404 in 0.1110 ms
+2024-06-04 14:09:34.628 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/p - 404 0 null 0.6503ms
+2024-06-04 14:09:34.628 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5254/p, Response status code: 404
+2024-06-04 14:09:37.863 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:09:37.864 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:09:38.998 +02:00 [ERR] Failed executing DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:09:39.030 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AddressBookApi.Data.AddressBookContext'.
+Npgsql.PostgresException (0x80004005): 42P01: relation "Personen" does not exist
+
+POSITION: 117
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "Personen" does not exist
+    Position: 117
+    File: parse_relation.c
+    Line: 1449
+    Routine: parserOpenTable
+Npgsql.PostgresException (0x80004005): 42P01: relation "Personen" does not exist
+
+POSITION: 117
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "Personen" does not exist
+    Position: 117
+    File: parse_relation.c
+    Line: 1449
+    Routine: parserOpenTable
+2024-06-04 14:09:39.039 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:09:39.041 +02:00 [ERR] HTTP GET /personen responded 500 in 1177.4515 ms
+Npgsql.PostgresException (0x80004005): 42P01: relation "Personen" does not exist
+
+POSITION: 117
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Program.<>c.<<<Main>$>b__0_4>d.MoveNext() in /Users/hamzakahna/Library/CloudStorage/OneDrive-Personal/CODING/C#_Projects/AddressBookApi/AddressBookApi/Program.cs:line 57
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfT>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "Personen" does not exist
+    Position: 117
+    File: parse_relation.c
+    Line: 1449
+    Routine: parserOpenTable
+2024-06-04 14:09:39.070 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42P01: relation "Personen" does not exist
+
+POSITION: 117
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Program.<>c.<<<Main>$>b__0_4>d.MoveNext() in /Users/hamzakahna/Library/CloudStorage/OneDrive-Personal/CODING/C#_Projects/AddressBookApi/AddressBookApi/Program.cs:line 57
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfT>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "Personen" does not exist
+    Position: 117
+    File: parse_relation.c
+    Line: 1449
+    Routine: parserOpenTable
+2024-06-04 14:09:39.131 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 500 null text/html; charset=utf-8 1267.8134ms
+2024-06-04 14:10:02.824 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:10:02.825 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:10:02.848 +02:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:10:02.850 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AddressBookApi.Data.AddressBookContext'.
+Npgsql.PostgresException (0x80004005): 42P01: relation "Personen" does not exist
+
+POSITION: 117
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "Personen" does not exist
+    Position: 117
+    File: parse_relation.c
+    Line: 1449
+    Routine: parserOpenTable
+Npgsql.PostgresException (0x80004005): 42P01: relation "Personen" does not exist
+
+POSITION: 117
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "Personen" does not exist
+    Position: 117
+    File: parse_relation.c
+    Line: 1449
+    Routine: parserOpenTable
+2024-06-04 14:10:02.853 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:10:02.853 +02:00 [ERR] HTTP GET /personen responded 500 in 28.4986 ms
+Npgsql.PostgresException (0x80004005): 42P01: relation "Personen" does not exist
+
+POSITION: 117
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Program.<>c.<<<Main>$>b__0_4>d.MoveNext() in /Users/hamzakahna/Library/CloudStorage/OneDrive-Personal/CODING/C#_Projects/AddressBookApi/AddressBookApi/Program.cs:line 57
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfT>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "Personen" does not exist
+    Position: 117
+    File: parse_relation.c
+    Line: 1449
+    Routine: parserOpenTable
+2024-06-04 14:10:02.857 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42P01: relation "Personen" does not exist
+
+POSITION: 117
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Program.<>c.<<<Main>$>b__0_4>d.MoveNext() in /Users/hamzakahna/Library/CloudStorage/OneDrive-Personal/CODING/C#_Projects/AddressBookApi/AddressBookApi/Program.cs:line 57
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfT>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "Personen" does not exist
+    Position: 117
+    File: parse_relation.c
+    Line: 1449
+    Routine: parserOpenTable
+2024-06-04 14:10:02.867 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 500 null text/html; charset=utf-8 42.5057ms
+2024-06-04 14:10:35.270 +02:00 [INF] Application is shutting down...
+2024-06-04 14:10:54.367 +02:00 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-06-04 14:10:54.450 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-06-04 14:10:54.466 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-06-04 14:10:54.474 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-06-04 14:10:54.475 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-06-04 14:10:54.487 +02:00 [INF] No migrations were applied. The database is already up to date.
+2024-06-04 14:11:01.673 +02:00 [INF] User profile is available. Using '/Users/hamzakahna/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-06-04 14:11:01.843 +02:00 [INF] Now listening on: http://localhost:5254
+2024-06-04 14:11:01.847 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 14:11:01.847 +02:00 [INF] Hosting environment: Development
+2024-06-04 14:11:01.847 +02:00 [INF] Content root path: /Users/hamzakahna/Library/CloudStorage/OneDrive-Personal/CODING/C#_Projects/AddressBookApi/AddressBookApi
+2024-06-04 14:11:16.297 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:11:16.372 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:11:17.469 +02:00 [ERR] Failed executing DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:11:17.505 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AddressBookApi.Data.AddressBookContext'.
+Npgsql.PostgresException (0x80004005): 42P01: relation "Personen" does not exist
+
+POSITION: 117
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "Personen" does not exist
+    Position: 117
+    File: parse_relation.c
+    Line: 1449
+    Routine: parserOpenTable
+Npgsql.PostgresException (0x80004005): 42P01: relation "Personen" does not exist
+
+POSITION: 117
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "Personen" does not exist
+    Position: 117
+    File: parse_relation.c
+    Line: 1449
+    Routine: parserOpenTable
+2024-06-04 14:11:17.514 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:11:17.518 +02:00 [ERR] HTTP GET /personen responded 500 in 1174.9684 ms
+Npgsql.PostgresException (0x80004005): 42P01: relation "Personen" does not exist
+
+POSITION: 117
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Program.<>c.<<<Main>$>b__0_4>d.MoveNext() in /Users/hamzakahna/Library/CloudStorage/OneDrive-Personal/CODING/C#_Projects/AddressBookApi/AddressBookApi/Program.cs:line 57
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfT>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "Personen" does not exist
+    Position: 117
+    File: parse_relation.c
+    Line: 1449
+    Routine: parserOpenTable
+2024-06-04 14:11:17.538 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42P01: relation "Personen" does not exist
+
+POSITION: 117
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Program.<>c.<<<Main>$>b__0_4>d.MoveNext() in /Users/hamzakahna/Library/CloudStorage/OneDrive-Personal/CODING/C#_Projects/AddressBookApi/AddressBookApi/Program.cs:line 57
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfT>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "Personen" does not exist
+    Position: 117
+    File: parse_relation.c
+    Line: 1449
+    Routine: parserOpenTable
+2024-06-04 14:11:17.589 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 500 null text/html; charset=utf-8 1293.5636ms
+2024-06-04 14:11:20.450 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:11:20.453 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:11:20.480 +02:00 [ERR] Failed executing DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:11:20.487 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AddressBookApi.Data.AddressBookContext'.
+Npgsql.PostgresException (0x80004005): 42P01: relation "Personen" does not exist
+
+POSITION: 117
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "Personen" does not exist
+    Position: 117
+    File: parse_relation.c
+    Line: 1449
+    Routine: parserOpenTable
+Npgsql.PostgresException (0x80004005): 42P01: relation "Personen" does not exist
+
+POSITION: 117
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "Personen" does not exist
+    Position: 117
+    File: parse_relation.c
+    Line: 1449
+    Routine: parserOpenTable
+2024-06-04 14:11:20.495 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:11:20.496 +02:00 [ERR] HTTP GET /personen responded 500 in 45.1351 ms
+Npgsql.PostgresException (0x80004005): 42P01: relation "Personen" does not exist
+
+POSITION: 117
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Program.<>c.<<<Main>$>b__0_4>d.MoveNext() in /Users/hamzakahna/Library/CloudStorage/OneDrive-Personal/CODING/C#_Projects/AddressBookApi/AddressBookApi/Program.cs:line 57
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfT>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "Personen" does not exist
+    Position: 117
+    File: parse_relation.c
+    Line: 1449
+    Routine: parserOpenTable
+2024-06-04 14:11:20.518 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42P01: relation "Personen" does not exist
+
+POSITION: 117
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Program.<>c.<<<Main>$>b__0_4>d.MoveNext() in /Users/hamzakahna/Library/CloudStorage/OneDrive-Personal/CODING/C#_Projects/AddressBookApi/AddressBookApi/Program.cs:line 57
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfT>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "Personen" does not exist
+    Position: 117
+    File: parse_relation.c
+    Line: 1449
+    Routine: parserOpenTable
+2024-06-04 14:11:20.553 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 500 null text/html; charset=utf-8 102.4966ms
+2024-06-04 14:17:30.052 +02:00 [INF] Application is shutting down...
+eters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-06-04 14:17:06.484 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-06-04 14:17:06.501 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-06-04 14:17:06.509 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-06-04 14:17:06.510 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-06-04 14:17:06.521 +02:00 [INF] Applying migration '20240604121645_RenameTablesToGerman'.
+2024-06-04 14:17:06.579 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE "Addresses";
+2024-06-04 14:17:06.580 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "People" DROP CONSTRAINT "PK_People";
+2024-06-04 14:17:06.581 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "People" RENAME TO "Personen";
+2024-06-04 14:17:06.583 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Personen" RENAME COLUMN "LastName" TO "Vorname";
+2024-06-04 14:17:06.584 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Personen" RENAME COLUMN "FirstName" TO "Nachname";
+2024-06-04 14:17:06.591 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Personen" ADD CONSTRAINT "PK_Personen" PRIMARY KEY ("Id");
+2024-06-04 14:17:06.598 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Adressen" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "Straße" text NOT NULL,
+    "Stadt" text NOT NULL,
+    "Bundesland" text NOT NULL,
+    "PLZ" text NOT NULL,
+    "PersonId" integer NOT NULL,
+    CONSTRAINT "PK_Adressen" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_Adressen_Personen_PersonId" FOREIGN KEY ("PersonId") REFERENCES "Personen" ("Id") ON DELETE CASCADE
+);
+2024-06-04 14:17:06.600 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Adressen_PersonId" ON "Adressen" ("PersonId");
+2024-06-04 14:17:06.601 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20240604121645_RenameTablesToGerman', '8.0.6');
+2024-06-04 14:18:20.300 +02:00 [INF] User profile is available. Using '/Users/hamzakahna/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-06-04 14:18:20.470 +02:00 [INF] Now listening on: http://localhost:5254
+2024-06-04 14:18:20.471 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 14:18:20.472 +02:00 [INF] Hosting environment: Development
+2024-06-04 14:18:20.472 +02:00 [INF] Content root path: /Users/hamzakahna/Library/CloudStorage/OneDrive-Personal/CODING/C#_Projects/AddressBookApi/AddressBookApi
+2024-06-04 14:18:36.887 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:18:36.946 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:18:37.902 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:18:37.998 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:18:38.001 +02:00 [INF] HTTP GET /personen responded 200 in 1076.7637 ms
+2024-06-04 14:18:38.009 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 200 null application/json; charset=utf-8 1123.4556ms
+2024-06-04 14:23:07.365 +02:00 [INF] Application is shutting down...
+2024-06-04 14:23:11.471 +02:00 [INF] User profile is available. Using '/Users/hamzakahna/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-06-04 14:23:11.638 +02:00 [INF] Now listening on: http://localhost:5254
+2024-06-04 14:23:11.639 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 14:23:11.639 +02:00 [INF] Hosting environment: Development
+2024-06-04 14:23:11.640 +02:00 [INF] Content root path: /Users/hamzakahna/Library/CloudStorage/OneDrive-Personal/CODING/C#_Projects/AddressBookApi/AddressBookApi
+2024-06-04 14:23:18.841 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:23:18.900 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:23:19.869 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:23:19.963 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:23:19.966 +02:00 [INF] HTTP GET /personen responded 200 in 1087.2595 ms
+2024-06-04 14:23:19.974 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 200 null application/json; charset=utf-8 1134.3799ms
+2024-06-04 14:38:20.101 +02:00 [INF] Application is shutting down...
+2024-06-04 14:38:26.920 +02:00 [INF] User profile is available. Using '/Users/hamzakahna/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-06-04 14:38:27.094 +02:00 [INF] Now listening on: http://localhost:5254
+2024-06-04 14:38:27.096 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 14:38:27.096 +02:00 [INF] Hosting environment: Development
+2024-06-04 14:38:27.096 +02:00 [INF] Content root path: /Users/hamzakahna/Library/CloudStorage/OneDrive-Personal/CODING/C#_Projects/AddressBookApi/AddressBookApi
+2024-06-04 14:38:28.515 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:38:28.591 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:38:29.676 +02:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:38:29.772 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:38:29.775 +02:00 [INF] HTTP GET /personen responded 200 in 1213.1255 ms
+2024-06-04 14:38:29.783 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 200 null application/json; charset=utf-8 1270.4793ms
+2024-06-04 14:38:32.688 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:38:32.690 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:38:32.707 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:38:32.708 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:38:32.709 +02:00 [INF] HTTP GET /personen responded 200 in 20.0886 ms
+2024-06-04 14:38:32.709 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 200 null application/json; charset=utf-8 21.0071ms
+2024-06-04 14:38:33.936 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:38:33.939 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:38:33.996 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:38:33.997 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:38:33.997 +02:00 [INF] HTTP GET /personen responded 200 in 60.4726 ms
+2024-06-04 14:38:33.997 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 200 null application/json; charset=utf-8 60.9853ms
+2024-06-04 14:38:38.778 +02:00 [INF] Application is shutting down...
+2024-06-04 14:39:29.372 +02:00 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-06-04 14:39:29.446 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-06-04 14:39:29.462 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-06-04 14:39:29.470 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-06-04 14:39:29.471 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-06-04 14:39:29.481 +02:00 [INF] Applying migration '20240604123905_InitialCreate'.
+2024-06-04 14:39:29.530 +02:00 [ERR] Failed executing DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Personen" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "Vorname" text NOT NULL,
+    "Nachname" text NOT NULL,
+    CONSTRAINT "PK_Personen" PRIMARY KEY ("Id")
+);
+2024-06-04 14:39:42.232 +02:00 [INF] User profile is available. Using '/Users/hamzakahna/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-06-04 14:39:42.400 +02:00 [INF] Now listening on: http://localhost:5254
+2024-06-04 14:39:42.401 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 14:39:42.402 +02:00 [INF] Hosting environment: Development
+2024-06-04 14:39:42.402 +02:00 [INF] Content root path: /Users/hamzakahna/Library/CloudStorage/OneDrive-Personal/CODING/C#_Projects/AddressBookApi/AddressBookApi
+2024-06-04 14:39:48.711 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:39:48.804 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:39:49.822 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:39:49.905 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:39:49.908 +02:00 [INF] HTTP GET /personen responded 200 in 1139.8537 ms
+2024-06-04 14:39:49.918 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 200 null application/json; charset=utf-8 1210.5072ms
+2024-06-04 14:46:41.618 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:46:41.620 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:46:41.645 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:46:41.646 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:46:41.647 +02:00 [INF] HTTP GET /personen responded 200 in 27.6195 ms
+2024-06-04 14:46:41.647 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 200 null application/json; charset=utf-8 29.0499ms
+2024-06-04 14:47:07.062 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:47:07.067 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:47:07.147 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:47:07.148 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:47:07.149 +02:00 [INF] HTTP GET /personen responded 200 in 86.4980 ms
+2024-06-04 14:47:07.149 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 200 null application/json; charset=utf-8 87.2243ms
+2024-06-04 14:47:11.089 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen/1 - null null
+2024-06-04 14:47:11.090 +02:00 [INF] Executing endpoint 'HTTP: GET /personen/{id}'
+2024-06-04 14:47:11.143 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Nachname", t."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM (
+    SELECT p."Id", p."Nachname", p."Vorname"
+    FROM "Personen" AS p
+    WHERE p."Id" = @__id_0
+    LIMIT 1
+) AS t
+LEFT JOIN "Adressen" AS a ON t."Id" = a."PersonId"
+ORDER BY t."Id"
+2024-06-04 14:47:11.147 +02:00 [INF] Setting HTTP status code 200.
+2024-06-04 14:47:11.147 +02:00 [INF] Writing value of type 'Person' as Json.
+2024-06-04 14:47:11.147 +02:00 [INF] Executed endpoint 'HTTP: GET /personen/{id}'
+2024-06-04 14:47:11.148 +02:00 [INF] HTTP GET /personen/1 responded 200 in 57.5773 ms
+2024-06-04 14:47:11.148 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen/1 - 200 null application/json; charset=utf-8 58.6043ms
+2024-06-04 14:47:43.379 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5254/personen - application/json 294
+2024-06-04 14:47:43.380 +02:00 [INF] Executing endpoint 'HTTP: POST /personen'
+2024-06-04 14:47:43.506 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?', @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Personen" ("Nachname", "Vorname")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2024-06-04 14:47:43.522 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p2='?', @p3='?', @p4='?' (DbType = Int32), @p5='?', @p6='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Adressen" ("Bundesland", "PLZ", "PersonId", "Stadt", "Straße")
+VALUES (@p2, @p3, @p4, @p5, @p6)
+RETURNING "Id";
+2024-06-04 14:47:43.540 +02:00 [INF] Setting HTTP status code 201.
+2024-06-04 14:47:43.540 +02:00 [INF] Writing value of type 'Person' as Json.
+2024-06-04 14:47:43.541 +02:00 [INF] Executed endpoint 'HTTP: POST /personen'
+2024-06-04 14:47:43.542 +02:00 [INF] HTTP POST /personen responded 201 in 161.7780 ms
+2024-06-04 14:47:43.542 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5254/personen - 201 null application/json; charset=utf-8 162.5214ms
+2024-06-04 14:47:48.181 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:47:48.182 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:47:48.185 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:47:48.192 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:47:48.192 +02:00 [INF] HTTP GET /personen responded 200 in 10.5355 ms
+2024-06-04 14:47:48.193 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 200 null application/json; charset=utf-8 11.562ms
+2024-06-04 14:49:17.530 +02:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5254/personen/2 - application/json 292
+2024-06-04 14:49:17.530 +02:00 [INF] Executing endpoint 'HTTP: PUT /personen/{id}'
+2024-06-04 14:49:17.533 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Nachname", t."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM (
+    SELECT p."Id", p."Nachname", p."Vorname"
+    FROM "Personen" AS p
+    WHERE p."Id" = @__id_0
+    LIMIT 1
+) AS t
+LEFT JOIN "Adressen" AS a ON t."Id" = a."PersonId"
+ORDER BY t."Id"
+2024-06-04 14:49:17.548 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?', @p1='?', @p2='?' (DbType = Int32), @p3='?', @p4='?', @p7='?' (DbType = Int32), @p5='?', @p6='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Adressen" ("Bundesland", "PLZ", "PersonId", "Stadt", "Straße")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+UPDATE "Personen" SET "Nachname" = @p5, "Vorname" = @p6
+WHERE "Id" = @p7;
+2024-06-04 14:49:17.550 +02:00 [INF] Setting HTTP status code 204.
+2024-06-04 14:49:17.550 +02:00 [INF] Executed endpoint 'HTTP: PUT /personen/{id}'
+2024-06-04 14:49:17.550 +02:00 [INF] HTTP PUT /personen/2 responded 204 in 20.0641 ms
+2024-06-04 14:49:17.550 +02:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5254/personen/2 - 204 null null 20.6139ms
+2024-06-04 14:49:26.230 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:49:26.230 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:49:26.234 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:49:26.236 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:49:26.236 +02:00 [INF] HTTP GET /personen responded 200 in 5.9425 ms
+2024-06-04 14:49:26.237 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 200 null application/json; charset=utf-8 6.7039ms
+2024-06-04 14:49:39.304 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:49:39.304 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:49:39.306 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:49:39.307 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:49:39.307 +02:00 [INF] HTTP GET /personen responded 200 in 2.9613 ms
+2024-06-04 14:49:39.307 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 200 null application/json; charset=utf-8 3.4254ms
+2024-06-04 14:50:25.163 +02:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5254/personen/3 - null null
+2024-06-04 14:50:25.163 +02:00 [INF] Executing endpoint 'HTTP: DELETE /personen/{id}'
+2024-06-04 14:50:25.174 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname"
+FROM "Personen" AS p
+WHERE p."Id" = @__p_0
+LIMIT 1
+2024-06-04 14:50:25.174 +02:00 [INF] Setting HTTP status code 404.
+2024-06-04 14:50:25.174 +02:00 [INF] Executed endpoint 'HTTP: DELETE /personen/{id}'
+2024-06-04 14:50:25.174 +02:00 [INF] HTTP DELETE /personen/3 responded 404 in 11.3581 ms
+2024-06-04 14:50:25.175 +02:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5254/personen/3 - 404 0 null 11.7948ms
+2024-06-04 14:50:28.928 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:50:28.928 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:50:28.931 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:50:28.933 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:50:28.933 +02:00 [INF] HTTP GET /personen responded 200 in 4.4309 ms
+2024-06-04 14:50:28.933 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 200 null application/json; charset=utf-8 5.0907ms
+2024-06-04 14:50:39.868 +02:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5254/personen/5 - null null
+2024-06-04 14:50:39.869 +02:00 [INF] Executing endpoint 'HTTP: DELETE /personen/{id}'
+2024-06-04 14:50:39.871 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname"
+FROM "Personen" AS p
+WHERE p."Id" = @__p_0
+LIMIT 1
+2024-06-04 14:50:39.877 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Personen"
+WHERE "Id" = @p0;
+2024-06-04 14:50:39.880 +02:00 [INF] Setting HTTP status code 200.
+2024-06-04 14:50:39.880 +02:00 [INF] Writing value of type 'Person' as Json.
+2024-06-04 14:50:39.880 +02:00 [INF] Executed endpoint 'HTTP: DELETE /personen/{id}'
+2024-06-04 14:50:39.880 +02:00 [INF] HTTP DELETE /personen/5 responded 200 in 11.6166 ms
+2024-06-04 14:50:39.880 +02:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5254/personen/5 - 200 null application/json; charset=utf-8 11.9896ms
+2024-06-04 14:50:48.469 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:50:48.470 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:50:48.472 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:50:48.472 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:50:48.473 +02:00 [INF] HTTP GET /personen responded 200 in 3.0076 ms
+2024-06-04 14:50:48.473 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 200 null application/json; charset=utf-8 3.4871ms
+2024-06-04 14:51:19.386 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen/suche?name=hamza - null null
+2024-06-04 14:51:19.386 +02:00 [INF] Executing endpoint 'HTTP: GET /personen/suche'
+2024-06-04 14:51:19.401 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__name_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+WHERE p."Vorname" = @__name_0 OR p."Nachname" = @__name_0
+ORDER BY p."Id"
+2024-06-04 14:51:19.402 +02:00 [INF] Setting HTTP status code 200.
+2024-06-04 14:51:19.402 +02:00 [INF] Writing value of type 'List`1' as Json.
+2024-06-04 14:51:19.402 +02:00 [INF] Executed endpoint 'HTTP: GET /personen/suche'
+2024-06-04 14:51:19.402 +02:00 [INF] HTTP GET /personen/suche responded 200 in 16.1591 ms
+2024-06-04 14:51:19.402 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen/suche?name=hamza - 200 null application/json; charset=utf-8 16.5396ms
+2024-06-04 14:51:26.889 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen/suche?name=Hamza - null null
+2024-06-04 14:51:26.890 +02:00 [INF] Executing endpoint 'HTTP: GET /personen/suche'
+2024-06-04 14:51:26.892 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__name_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+WHERE p."Vorname" = @__name_0 OR p."Nachname" = @__name_0
+ORDER BY p."Id"
+2024-06-04 14:51:26.892 +02:00 [INF] Setting HTTP status code 200.
+2024-06-04 14:51:26.892 +02:00 [INF] Writing value of type 'List`1' as Json.
+2024-06-04 14:51:26.892 +02:00 [INF] Executed endpoint 'HTTP: GET /personen/suche'
+2024-06-04 14:51:26.892 +02:00 [INF] HTTP GET /personen/suche responded 200 in 2.8623 ms
+2024-06-04 14:51:26.893 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen/suche?name=Hamza - 200 null application/json; charset=utf-8 3.2466ms
+2024-06-04 14:51:53.637 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen/suche?nachname=Kahna - null null
+2024-06-04 14:51:53.637 +02:00 [INF] Executing endpoint 'HTTP: GET /personen/suche'
+2024-06-04 14:51:53.637 +02:00 [INF] Executed endpoint 'HTTP: GET /personen/suche'
+2024-06-04 14:51:53.638 +02:00 [ERR] HTTP GET /personen/suche responded 500 in 1.0839 ms
+Microsoft.AspNetCore.Http.BadHttpRequestException: Required parameter "string name" was not provided from query string.
+   at lambda_method14(Closure, Object, HttpContext)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-06-04 14:51:53.660 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Http.BadHttpRequestException: Required parameter "string name" was not provided from query string.
+   at lambda_method14(Closure, Object, HttpContext)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-06-04 14:51:53.663 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen/suche?nachname=Kahna - 400 null text/plain; charset=utf-8 26.3578ms
+2024-06-04 14:52:28.906 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen/suche?name=Kahna - null null
+2024-06-04 14:52:28.906 +02:00 [INF] Executing endpoint 'HTTP: GET /personen/suche'
+2024-06-04 14:52:28.916 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__name_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+WHERE p."Vorname" = @__name_0 OR p."Nachname" = @__name_0
+ORDER BY p."Id"
+2024-06-04 14:52:28.916 +02:00 [INF] Setting HTTP status code 200.
+2024-06-04 14:52:28.916 +02:00 [INF] Writing value of type 'List`1' as Json.
+2024-06-04 14:52:28.916 +02:00 [INF] Executed endpoint 'HTTP: GET /personen/suche'
+2024-06-04 14:52:28.916 +02:00 [INF] HTTP GET /personen/suche responded 200 in 10.7105 ms
+2024-06-04 14:52:28.917 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen/suche?name=Kahna - 200 null application/json; charset=utf-8 11.1249ms
+2024-06-04 14:52:59.522 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5254/personen - application/json 295
+2024-06-04 14:52:59.522 +02:00 [INF] Executing endpoint 'HTTP: POST /personen'
+2024-06-04 14:52:59.524 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Personen" ("Nachname", "Vorname")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2024-06-04 14:52:59.526 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p2='?', @p3='?', @p4='?' (DbType = Int32), @p5='?', @p6='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Adressen" ("Bundesland", "PLZ", "PersonId", "Stadt", "Straße")
+VALUES (@p2, @p3, @p4, @p5, @p6)
+RETURNING "Id";
+2024-06-04 14:52:59.527 +02:00 [INF] Setting HTTP status code 201.
+2024-06-04 14:52:59.527 +02:00 [INF] Writing value of type 'Person' as Json.
+2024-06-04 14:52:59.527 +02:00 [INF] Executed endpoint 'HTTP: POST /personen'
+2024-06-04 14:52:59.527 +02:00 [INF] HTTP POST /personen responded 201 in 5.1504 ms
+2024-06-04 14:52:59.527 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5254/personen - 201 null application/json; charset=utf-8 5.5247ms
+2024-06-04 14:53:02.967 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:53:02.968 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:53:02.971 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:53:02.972 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:53:02.972 +02:00 [INF] HTTP GET /personen responded 200 in 4.3129 ms
+2024-06-04 14:53:02.972 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 200 null application/json; charset=utf-8 4.7075ms
+2024-06-04 14:53:18.124 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5254/personen - application/json 305
+2024-06-04 14:53:18.125 +02:00 [INF] Executing endpoint 'HTTP: POST /personen'
+2024-06-04 14:53:18.127 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Personen" ("Nachname", "Vorname")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2024-06-04 14:53:18.128 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p2='?', @p3='?', @p4='?' (DbType = Int32), @p5='?', @p6='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Adressen" ("Bundesland", "PLZ", "PersonId", "Stadt", "Straße")
+VALUES (@p2, @p3, @p4, @p5, @p6)
+RETURNING "Id";
+2024-06-04 14:53:18.129 +02:00 [INF] Setting HTTP status code 201.
+2024-06-04 14:53:18.129 +02:00 [INF] Writing value of type 'Person' as Json.
+2024-06-04 14:53:18.129 +02:00 [INF] Executed endpoint 'HTTP: POST /personen'
+2024-06-04 14:53:18.130 +02:00 [INF] HTTP POST /personen responded 201 in 4.8454 ms
+2024-06-04 14:53:18.130 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5254/personen - 201 null application/json; charset=utf-8 5.2102ms
+2024-06-04 14:53:26.398 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5254/personen - application/json 312
+2024-06-04 14:53:26.399 +02:00 [INF] Executing endpoint 'HTTP: POST /personen'
+2024-06-04 14:53:26.400 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Personen" ("Nachname", "Vorname")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2024-06-04 14:53:26.402 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p2='?', @p3='?', @p4='?' (DbType = Int32), @p5='?', @p6='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Adressen" ("Bundesland", "PLZ", "PersonId", "Stadt", "Straße")
+VALUES (@p2, @p3, @p4, @p5, @p6)
+RETURNING "Id";
+2024-06-04 14:53:26.403 +02:00 [INF] Setting HTTP status code 201.
+2024-06-04 14:53:26.403 +02:00 [INF] Writing value of type 'Person' as Json.
+2024-06-04 14:53:26.404 +02:00 [INF] Executed endpoint 'HTTP: POST /personen'
+2024-06-04 14:53:26.404 +02:00 [INF] HTTP POST /personen responded 201 in 5.0614 ms
+2024-06-04 14:53:26.404 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5254/personen - 201 null application/json; charset=utf-8 5.4091ms
+2024-06-04 14:53:33.993 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5254/personen - application/json 306
+2024-06-04 14:53:33.993 +02:00 [INF] Executing endpoint 'HTTP: POST /personen'
+2024-06-04 14:53:33.995 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Personen" ("Nachname", "Vorname")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2024-06-04 14:53:33.996 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p2='?', @p3='?', @p4='?' (DbType = Int32), @p5='?', @p6='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Adressen" ("Bundesland", "PLZ", "PersonId", "Stadt", "Straße")
+VALUES (@p2, @p3, @p4, @p5, @p6)
+RETURNING "Id";
+2024-06-04 14:53:33.997 +02:00 [INF] Setting HTTP status code 201.
+2024-06-04 14:53:33.997 +02:00 [INF] Writing value of type 'Person' as Json.
+2024-06-04 14:53:33.997 +02:00 [INF] Executed endpoint 'HTTP: POST /personen'
+2024-06-04 14:53:33.997 +02:00 [INF] HTTP POST /personen responded 201 in 4.2522 ms
+2024-06-04 14:53:33.998 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5254/personen - 201 null application/json; charset=utf-8 4.5877ms
+2024-06-04 14:53:43.371 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5254/personen - application/json 311
+2024-06-04 14:53:43.371 +02:00 [INF] Executing endpoint 'HTTP: POST /personen'
+2024-06-04 14:53:43.373 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Personen" ("Nachname", "Vorname")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2024-06-04 14:53:43.374 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p2='?', @p3='?', @p4='?' (DbType = Int32), @p5='?', @p6='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Adressen" ("Bundesland", "PLZ", "PersonId", "Stadt", "Straße")
+VALUES (@p2, @p3, @p4, @p5, @p6)
+RETURNING "Id";
+2024-06-04 14:53:43.375 +02:00 [INF] Setting HTTP status code 201.
+2024-06-04 14:53:43.376 +02:00 [INF] Writing value of type 'Person' as Json.
+2024-06-04 14:53:43.376 +02:00 [INF] Executed endpoint 'HTTP: POST /personen'
+2024-06-04 14:53:43.376 +02:00 [INF] HTTP POST /personen responded 201 in 4.5703 ms
+2024-06-04 14:53:43.376 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5254/personen - 201 null application/json; charset=utf-8 4.8962ms
+2024-06-04 14:54:06.951 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:54:06.952 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:54:06.954 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:54:06.955 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:54:06.956 +02:00 [INF] HTTP GET /personen responded 200 in 4.0419 ms
+2024-06-04 14:54:06.956 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 200 null application/json; charset=utf-8 4.6059ms
+2024-06-04 14:54:53.923 +02:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5254/personen/4 - application/json 230
+2024-06-04 14:54:53.923 +02:00 [INF] Executing endpoint 'HTTP: PUT /personen/{id}'
+2024-06-04 14:54:53.925 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Nachname", t."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM (
+    SELECT p."Id", p."Nachname", p."Vorname"
+    FROM "Personen" AS p
+    WHERE p."Id" = @__id_0
+    LIMIT 1
+) AS t
+LEFT JOIN "Adressen" AS a ON t."Id" = a."PersonId"
+ORDER BY t."Id"
+2024-06-04 14:54:53.927 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?' (DbType = Int32), @p3='?', @p4='?', @p7='?' (DbType = Int32), @p5='?', @p6='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Adressen" ("Bundesland", "PLZ", "PersonId", "Stadt", "Straße")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+UPDATE "Personen" SET "Nachname" = @p5, "Vorname" = @p6
+WHERE "Id" = @p7;
+2024-06-04 14:54:53.929 +02:00 [INF] Setting HTTP status code 204.
+2024-06-04 14:54:53.929 +02:00 [INF] Executed endpoint 'HTTP: PUT /personen/{id}'
+2024-06-04 14:54:53.929 +02:00 [INF] HTTP PUT /personen/4 responded 204 in 5.8457 ms
+2024-06-04 14:54:53.929 +02:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5254/personen/4 - 204 null null 6.209ms
+2024-06-04 14:55:06.489 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:55:06.490 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:55:06.492 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:55:06.493 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:55:06.493 +02:00 [INF] HTTP GET /personen responded 200 in 3.4709 ms
+2024-06-04 14:55:06.493 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 200 null application/json; charset=utf-8 4.0771ms
+2024-06-04 14:56:40.574 +02:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5254/personen/4 - application/json 295
+2024-06-04 14:56:40.574 +02:00 [INF] Executing endpoint 'HTTP: PUT /personen/{id}'
+2024-06-04 14:56:40.576 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Nachname", t."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM (
+    SELECT p."Id", p."Nachname", p."Vorname"
+    FROM "Personen" AS p
+    WHERE p."Id" = @__id_0
+    LIMIT 1
+) AS t
+LEFT JOIN "Adressen" AS a ON t."Id" = a."PersonId"
+ORDER BY t."Id"
+2024-06-04 14:56:40.583 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p3='?' (DbType = Int32), @p1='?', @p2='?', @p4='?', @p5='?', @p6='?' (DbType = Int32), @p7='?', @p8='?'], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Adressen"
+WHERE "Id" = @p0;
+UPDATE "Personen" SET "Nachname" = @p1, "Vorname" = @p2
+WHERE "Id" = @p3;
+INSERT INTO "Adressen" ("Bundesland", "PLZ", "PersonId", "Stadt", "Straße")
+VALUES (@p4, @p5, @p6, @p7, @p8)
+RETURNING "Id";
+2024-06-04 14:56:40.586 +02:00 [INF] Setting HTTP status code 204.
+2024-06-04 14:56:40.586 +02:00 [INF] Executed endpoint 'HTTP: PUT /personen/{id}'
+2024-06-04 14:56:40.586 +02:00 [INF] HTTP PUT /personen/4 responded 204 in 11.6427 ms
+2024-06-04 14:56:40.586 +02:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5254/personen/4 - 204 null null 12.0202ms
+2024-06-04 14:56:42.802 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/personen - null null
+2024-06-04 14:56:42.802 +02:00 [INF] Executing endpoint 'HTTP: GET /personen'
+2024-06-04 14:56:42.805 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Nachname", p."Vorname", a."Id", a."Bundesland", a."PLZ", a."PersonId", a."Stadt", a."Straße"
+FROM "Personen" AS p
+LEFT JOIN "Adressen" AS a ON p."Id" = a."PersonId"
+ORDER BY p."Id"
+2024-06-04 14:56:42.805 +02:00 [INF] Executed endpoint 'HTTP: GET /personen'
+2024-06-04 14:56:42.806 +02:00 [INF] HTTP GET /personen responded 200 in 3.2449 ms
+2024-06-04 14:56:42.806 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/personen - 200 null application/json; charset=utf-8 3.7138ms
+2024-06-04 20:54:02.747 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/favicon.ico - null null
+2024-06-04 20:54:02.748 +02:00 [INF] HTTP GET /favicon.ico responded 404 in 0.2218 ms
+2024-06-04 20:54:02.748 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/favicon.ico - 404 0 null 1.1691ms
+2024-06-04 20:54:02.749 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5254/favicon.ico, Response status code: 404

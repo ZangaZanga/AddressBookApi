@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "APrVGOIZumdZLBv1po0zxDPsT4iu0DprLKy+1WGhl8M=",
+  "Source": "AddressBookApi",
+  "BasePath": "_content/AddressBookApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
